@@ -36,20 +36,43 @@
         width: 102px;
         height: 102px;
     }
+
+    .svbtle-button-done {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        z-index: 2;
+        padding: 0;
+        border-radius: 100%;
+        background-color: black;
+        width: 102px;
+        height: 102px;
+    }
     </style>
     <script>
+    var id;
+
     function svbtleTrigger() {
+        var e = document.getElementById("svbtle-button");
+
         function alertTest() {
             alert("yeay!");
+            e.className = "svbtle-button-done";
             clearTimeout(id);
         }
 
-        var id = setTimeout(alertTest, 1500);
+        if (e.className != "svbtle-button-done") {
+            id = setTimeout(alertTest, 1450);
+        }
+    }
+
+    function clearTiming() {
+        clearTimeout(id);
     }
     </script>
 </head>
 <body>
-    <div class="svbtle-button-container" id="svbtle-button-full" onmouseover="svbtleTrigger()">
+    <div class="svbtle-button-container" id="svbtle-button-full" onmouseover="svbtleTrigger()" onmouseout="clearTiming()">
         <div class="svbtle-button-trigger" id="svbtle-button">
         </div>
     </div>
