@@ -479,6 +479,10 @@ footer a:hover {
 @media only screen and (max-width: 479px) {}
 
 /* Hans's flavour */
+body {
+  cursor: crosshair;
+}
+
 aside#sidebar {
   text-align: justify;
 }
