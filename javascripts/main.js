@@ -23,4 +23,5 @@ function BangBang() {
 
         // make random rotation
         // fade out after 2 sec
+        // Delete the element afterwards as well
 }
