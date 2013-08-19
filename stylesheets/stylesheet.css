@@ -483,11 +483,6 @@ body {
   cursor: crosshair;
 }
 
-.bang {
-  position: fixed;
-  z-index: 25;
-}
-
 aside#sidebar {
   text-align: justify;
 }
