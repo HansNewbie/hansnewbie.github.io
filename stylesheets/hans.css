@@ -169,9 +169,10 @@ div#main-content {
 
 div#sidebar {
   position: absolute;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   right: 0;
   top: 0;
-  text-align: justify;
+  text-align: center;
   display: absolute;
   width: 200px;
   margin: 30px;
