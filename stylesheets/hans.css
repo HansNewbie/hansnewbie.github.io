@@ -50,7 +50,7 @@ table {
 
 /* Hans */
 body {
-  cursor: crosshair;
+  /*cursor: crosshair;*/
 }
 
 a:link, a:hover, a:visited, a:active {
@@ -142,15 +142,21 @@ td {
   border-bottom: 1px solid #000;
 }
 
+td.title {
+  width: 500px;
+}
+
 td.blog {
-  padding-left: 45px;
-  padding-right: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100px;
 }
 
 td.tech-stack {
   text-align: center;
   font-family: "Amarante", Helvetica, Arial, cursive;
-  padding-left: 50px;
+  padding-left: 10px;
+  width: 200px;
 }
 
 div.main-container {
@@ -171,7 +177,7 @@ div#sidebar {
   position: absolute;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   right: 0;
-  top: 0;
+  top: 70px;
   text-align: center;
   display: absolute;
   width: 200px;
