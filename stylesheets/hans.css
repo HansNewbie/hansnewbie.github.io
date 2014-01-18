@@ -49,6 +49,12 @@ table {
 /* End of Reset */
 
 /* Hans */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
 #header {
   width: 100%;
   height: 350px;
@@ -64,7 +70,6 @@ table {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  font-family: 'Lily Script One', Helvetica, Arial, cursive;
   -webkit-box-shadow: 0px 0px 20px #333 inset;
   -moz-box-shadow: 0px 0px 20px #333 inset;
   box-shadow: 0px 0px 20px #333 inset;
@@ -105,79 +110,68 @@ table {
   left: 0px;
 }
 
-h2 {
-  font-family: "Kavoon", Helvetica, Arial, cursive;
-  text-align: center;
-  font-size: 50px;
-  margin: 20px;
-  text-decoration: underline;
+#navigation-list {
+  margin: 0 20px 20px;
 }
 
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-th, td {
+#navigation-list th, #navigation-list td {
   padding: 10px;
+  color: #555;
 }
 
-th {
+#navigation-list td a:link, #navigation-list td a:visited,
+#navigation-list td a:active, #navigation-list td a:hover {
+  color: #555;
+}
+
+#navigation-list th {
+  text-decoration: underline;
   text-align: left;
   font-size: 30px;
-  font-family: "Cantora One", Helvetica, Arial, cursive;
+  padding-top: 20px;
+  font-weight: bold;
 }
 
-td {
+#navigation-list td {
   font-size: 20px;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #DDD;
+  box-shadow: 0 1px #CCC;
 }
 
-td.title {
-  width: 500px;
+#navigation-list td.title {
+  width: 300px;
 }
 
-td.blog {
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100px;
-}
-
-td.tech-stack {
+#navigation-list td.tech-stack {
+  display: none;
   text-align: center;
-  font-family: "Amarante", Helvetica, Arial, cursive;
-  padding-left: 10px;
   width: 200px;
 }
 
-div.main-container {
+#navigation-list:hover td.tech-stack {
+  display: table-cell;
+  /* Give sliding out effect*/
+}
+
+/* Selected Row*/
+#navigation-list tr:hover td {
+  background: #EEE;
+  color: #BBB;
+}
+
+#navigation-list tr:hover td a:link, #navigation-list tr:hover td a:visited, #navigation-list tr:hover td a:hover, #navigation-list tr:hover td a:active {
+  color: #000;
+}
+/* End of Selected Row */
+
+div#navigation-bar {
+  position: fixed;
+  top: 100px;
+  background: #FFF;
+}
+
+#iframe-content-target {
   width: 100%;
-  position: relative;
-}
-
-div#main-content {
-  position: static;
-  font-family: "Kite One", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 30px;
-  padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div#sidebar {
-  position: absolute;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  right: 0;
-  top: 70px;
-  text-align: center;
-  display: absolute;
-  width: 200px;
-  margin: 30px;
-  margin-right: 100px;
-  padding: 20px;
-  border-radius: 5px;
-  border: 1px solid #AAAAAA;
-  border-bottom: 3px solid #AAAAAA;
+  height: 100%;
 }
 /* End of Hans */
