@@ -55,63 +55,102 @@ body {
   height: 100%;
 }
 
-#header {
-  width: 100%;
-  height: 350px;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0;
-  padding-top: 100px;
-  margin: 0;
-  overflow: hidden;
-  position: relative;
-  background-image: url(../images/header_bg_hans.jpg);
-  background-position: 50% -430px;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  -webkit-box-shadow: 0px 0px 20px #333 inset;
-  -moz-box-shadow: 0px 0px 20px #333 inset;
-  box-shadow: 0px 0px 20px #333 inset;
-}
-
-#gravatar {
-  width: 120px;
-  height: 120px;
-  margin-left: 110px;
-  float: left;
-  border-radius: 100%;
-  -webkit-box-shadow: 0px 3px 10px #000;
-  -moz-box-shadow: 0px 3px 10px #000;
-  box-shadow: 0px 3px 10px #000;
-}
-
-#header h1 {
-  float: left;
-  position: relative;
-  top: 20px;
-  left: -150px;
-  letter-spacing: -1px;
-  font-size: 72px;
-  color: #fff;
-  line-height: 1;
-  margin-left: 40px;
-  margin-bottom: 0.2em;
-  border-radius: 7px;
-  background-color: rgba(200, 200, 200, 0.2);
-  border-bottom: 3px dashed #fff;
-  opacity: 0;
+#navigation-bar {
+  position: fixed;
+  top: 0px;
+  left: -400px;
+  background: #FFF;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-#header:hover h1 {
-  opacity: 1;
-  left: 0px;
+#header {
+  position: absolute;
+  top: 0;
+  width: 360px;
+  height: 100px;
+  padding: 0;
+  padding-top: 20px;
+  margin: 0;
+  background: #DDD;
+  border-bottom: 1px solid #AAA;
+  border-right: 1px solid #DDD;
+}
+
+#gravatar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  -webkit-box-shadow: 0px 3px 10px #000;
+  -moz-box-shadow: 0px 3px 10px #000;
+  box-shadow: 0px 3px 10px #000;
+  z-index: 12;
+}
+
+#gravatar:hover #navigation-bar, #navigation-bar:hover {
+  left: 0;
+}
+
+#gravatar-dummy {
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  border-radius: 100%;
+  -webkit-box-shadow: 0px 3px 10px #000;
+  -moz-box-shadow: 0px 3px 10px #000;
+  box-shadow: 0px 3px 10px #000;
+  visibility: hidden;
+}
+
+#header-data {
+  float: left;
+}
+
+#name-container {
+  margin: 5px 0 10px 20px;
+  float: left;
+  font-size: 30px;
+  color: #333;
+  line-height: 1;
+  border-bottom: 1px solid #AAA;
+  z-index: 10;
+}
+
+#link-container {
+  float: left;
+  clear: left;
+}
+
+#link-container a:link, #link-container a:visited, #link-container a:active, #link-container a:hover {
+  position: relative;
+  float: left;
+  font-size: 20px;
+  color: #555;
+  line-height: 1;
+  margin-left: 20px;
+  z-index: 10;
+}
+
+#navigation-list-container {
+  position: absolute;
+  top: 121px; /* 1px to account for border */
+  padding: 10px 20px 0;
+  background: #F3F3F3;
+  border-right: 1px solid #DDD;
+  overflow: auto;
 }
 
 #navigation-list {
-  margin: 0 20px 20px;
+  margin: 0;
+  width: 320px;
+}
+
+#navigation-list:hover {
+  width: 580px;
 }
 
 #navigation-list th, #navigation-list td {
@@ -146,28 +185,31 @@ body {
   display: none;
   text-align: center;
   width: 200px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 #navigation-list:hover td.tech-stack {
   display: table-cell;
-  /* Give sliding out effect*/
 }
 
 /* Selected Row*/
 #navigation-list tr:hover td {
-  background: #EEE;
-  color: #BBB;
+  background: #333;
+  color: #555;
+}
+
+#navigation-list tr:hover td.failure a:link, #navigation-list tr:hover td.failure a:visited, #navigation-list tr:hover td.failure a:active, #navigation-list tr:hover td.failure a:hover {
+  color: #900;
 }
 
 #navigation-list tr:hover td a:link, #navigation-list tr:hover td a:visited, #navigation-list tr:hover td a:hover, #navigation-list tr:hover td a:active {
-  color: #000;
+  color: #CCC;
 }
 /* End of Selected Row */
 
-div#navigation-bar {
-  position: fixed;
-  top: 100px;
-  background: #FFF;
+#navigation-list td.failure a:link, #navigation-list td.failure a:visited, #navigation-list td.failure a:active, #navigation-list td.failure a:hover {
+  color: #900;
 }
 
 #iframe-content-target {
