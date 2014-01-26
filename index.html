@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheets/hans.css" media="screen" />
+  <script src="scripts/hans.js"></script>
 
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -13,7 +14,7 @@
   <title>Hans A's Showreel by HansNewbie</title>
 </head>
 
-<body>
+<body onload="delayShow()">
   <!-- <header>
     <div class="inner">
       <h1>Hans A's Showreel</h1>
@@ -75,9 +76,40 @@
             <td class="title"><a href="http://hansnewbie.github.io/GGJ2013-Deborah" target="content-target">Hallucination of A Night with A Beer Bottle (Game)</a></td>
             <td class="tech-stack">[HTML/JavaScript]</td>
           </tr>
+          <tr>
+            <td class="title">Dummy</td>
+            <td class="tech-stack">[Dummy]</td>
+          </tr>
+          <tr>
+            <td class="title">Dummy</td>
+            <td class="tech-stack">[Dummy]</td>
+          </tr>
+          <tr>
+            <td class="title">Dummy</td>
+            <td class="tech-stack">[Dummy]</td>
+          </tr>
+          <tr>
+            <td class="title">Dummy</td>
+            <td class="tech-stack">[Dummy]</td>
+          </tr>
+          <tr>
+            <td class="title">Dummy</td>
+            <td class="tech-stack">[Dummy]</td>
+          </tr>
+          <tr>
+            <td class="title">Dummy</td>
+            <td class="tech-stack">[Dummy]</td>
+          </tr>
         </body>
       </table>
     </div>
+  </div>
+
+  <div id="hide-navigation-instruction" class="alert">
+    <button type="button" class="alert-close hide-on-click" id="navigation-instruction" onclick="hideOnClick()">&times;</button>
+    Hover over to see my work.<br/>
+    <span class="red-color">Red-coloured</span> means a failure.<br/>
+    Some links may be opened in a new page.
   </div>
 
   <iframe src="Homepage.html" name="content-target" id="iframe-content-target"></iframe>
