@@ -47,3 +47,22 @@ function hideOnClick() {
     var id = setInterval(fadeOut, 5);
   }
 }
+
+function hideOnHover() {
+  var hidden = document.getElementById("hide-navigation-instruction");
+
+  var opacity = 1.0
+
+  function fadeOut() {
+    opacity -= 0.05;
+
+    hidden.style.opacity = opacity;
+
+    if (opacity <= 0){
+      hidden.className += " hidden";
+      clearInterval(id);
+    }
+  }
+
+  var id = setInterval(fadeOut, 5);
+}
