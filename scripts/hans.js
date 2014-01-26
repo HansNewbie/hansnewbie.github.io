@@ -3,9 +3,6 @@ function delayShow() {
 }
 
 function showAlert() {
-  var e = window.event;
-  var element = e.target;
-
   var alert = document.getElementById("hide-navigation-instruction");
 
   var opacity = 0.0;

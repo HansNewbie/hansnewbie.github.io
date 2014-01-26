@@ -236,7 +236,7 @@ span.red-color {
   border-radius: 5px;
   background-color: #ffd700;
   padding: 10px 40px 5px 20px;
-  color: rgb(184, 134, 11);
+  color: rgb(173, 123, 0);
   font-size: 16px;
   font-weight: 500;
   opacity: 0;
@@ -251,6 +251,7 @@ span.red-color {
   background-color: transparent;
   color: rgb(184, 134, 11);
   font-weight: bolder;
+  cursor: pointer;
 }
 
 /* For Display that is less than the table size */
