@@ -66,3 +66,16 @@ function hideOnHover() {
 
   var id = setInterval(fadeOut, 5);
 }
+
+function setSidebarLength() {
+  var sidebar = document.getElementById("navigation-list-container");
+
+  var height = window.innerHeight;
+
+  sidebar.style.height = (height - 131)+"px";
+}
+
+function initialize() {
+  delayShow();
+  setSidebarLength();
+}
