@@ -73,7 +73,7 @@ body {
   padding: 0;
   padding-top: 20px;
   margin: 0;
-  background: #DDD;
+  background: #333;
   border-bottom: 1px solid #AAA;
   border-right: 1px solid #DDD;
 }
@@ -115,25 +115,37 @@ body {
   margin: 5px 0 10px 20px;
   float: left;
   font-size: 30px;
-  color: #333;
+  color: #EEE;
   line-height: 1;
   border-bottom: 1px solid #AAA;
+  text-shadow: 1px 1px 5px #000;
   z-index: 10;
 }
 
 #link-container {
   float: left;
   clear: left;
+  padding-left: 20px;
 }
 
 #link-container a:link, #link-container a:visited, #link-container a:active, #link-container a:hover {
-  position: relative;
   float: left;
   font-size: 20px;
   color: #555;
   line-height: 1;
-  margin-left: 20px;
   z-index: 10;
+  margin: 0 5px;
+}
+
+#link-container a:hover {
+  border-bottom: 5px solid #DDD;
+}
+
+#link-container img {
+  border-radius: 100%;
+  -webkit-box-shadow: 0px 0px 2px #777;
+  -moz-box-shadow: 0px 0px 2px #777;
+  box-shadow: 0px 0px 2px #777;
 }
 
 #navigation-list-container {
@@ -157,17 +169,6 @@ body {
 
 .navigation-list-year, #navigation-list .title, #navigation-list .tech-stack {
   padding: 10px;
-  color: #555;
-}
-
-#navigation-list .title a:link, #navigation-list .title a:visited,
-#navigation-list .title a:active, #navigation-list .title a:hover {
-  color: #555;
-}
-
-#navigation-list .failure a:link, #navigation-list .failure a:visited,
-#navigation-list .failure a:active, #navigation-list .failure a:hover {
-  color: #900;
 }
 
 .navigation-list-year {
@@ -177,21 +178,34 @@ body {
   text-decoration: underline;
   text-align: left;
   font-size: 30px;
-  padding-top: 20px;
+  padding-top: 30px;
   font-weight: bold;
+  color: #333;
 }
 
-#navigation-list .title, #navigation-list .tech-stack {
-  font-size: 20px;
+#navigation-list .a-row {
+  float: left;
+  clear: left;
+  overflow: auto;
   border-bottom: 1px solid #DDD;
   box-shadow: 0 1px #CCC;
 }
 
+#navigation-list .title, #navigation-list .tech-stack {
+  font-size: 20px;
+}
+
 #navigation-list .title {
-  display: inline;
+  display: block;
   width: 300px;
   float: left;
   clear: left;
+  color: #333;
+  text-decoration: underline;
+}
+
+#navigation-list .failure {
+  color: #900;
 }
 
 #navigation-list .tech-stack {
@@ -199,6 +213,7 @@ body {
   float: left;
   text-align: center;
   width: 200px;
+  color: #555;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -208,23 +223,20 @@ body {
 }
 
 #navigation-list-container:hover .tech-stack {
-  display: inline;
+  display: block;
 }
 
 /* Selected Row*/
-#navigation-list .a-row:hover .title, #navigation-list .a-row:hover .tech-stack{
+#navigation-list .a-row:hover {
   background: #333;
   color: #555;
 }
 
-#navigation-list .a-row:hover .title a:link, #navigation-list .a-row:hover .title a:visited,
-#navigation-list .a-row:hover .title a:hover, #navigation-list .a-row:hover .title a:active {
+#navigation-list .a-row:hover .title {
   color: #CCC;
 }
 
-#navigation-list .a-row:hover .failure,
-#navigation-list .a-row:hover .failure a:link, #navigation-list .a-row:hover .failure a:visited,
-#navigation-list .a-row:hover .failure a:active, #navigation-list .a-row:hover .failure a:hover {
+#navigation-list .a-row:hover .failure {
   color: #900;
 }
 /* End of Selected Row */

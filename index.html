@@ -10,12 +10,6 @@
 </head>
 
 <body onload="initialize()">
-  <!-- <header>
-    <div class="inner">
-      <h1>Hans A's Showreel</h1>
-      <a href="https://github.com/HansNewbie" class="button"><small>Follow me on</small>GitHub</a>
-    </div>
-  </header> -->
 
   <div id="navigation-bar">
     <div id="header">
@@ -23,53 +17,90 @@
       <div id="gravatar-dummy"></div>
       <div id="header-data">
         <div id="name-container">Hans Adrian</div>
-        <div id="link-container"><a href="http://ideascomecheap.blogspot.com/">Blog</a></div>
+        <div id="link-container">
+          <a href="http://ideascomecheap.blogspot.com/" class="web-link" target="_blank"><img src="images/Blogger.png" width="30px" height="30px" alt="http://ideascomecheap.blogspot.com/"></a>
+          <a href="https://github.com/HansNewbie" class="web-link" target="_blank"><img src="images/GitHub.png" width="30px" height="30px" alt="https://github.com/HansNewbie"></a>
+        </div>
       </div>
     </div>
+
     <div id="navigation-list-container">
+
       <div id="navigation-list">
         <div class="navigation-list-year">2014</div>
-        <div title="Will be opened in a new window" class="a-row">
-          <div class="title"><a href="http://www.codecademy.com/HansNewbie/codebits/PmVTjH" target="_blank">Exact Age Calculator</a></div>
-          <div class="tech-stack">[HTML/JS/CSS/jQuery]</div>
-        </div>
-        <div class="a-row">
-          <div class="title"><a href="http://hansnewbie.github.io/Home/" target="content-target">Android Launcher - Home Sample</a></div>
-          <div class="tech-stack">[Android]</div>
-        </div>
+
+        <a href="http://www.codecademy.com/HansNewbie/codebits/PmVTjH" target="_blank">
+          <div title="Will be opened in a new window" class="a-row">
+            <div class="title">Exact Age Calculator</div>
+            <div class="tech-stack">[HTML/JS/CSS/jQuery]</div>
+          </div>
+        </a>
+
+        <a href="http://hansnewbie.github.io/Home/" target="content-target">
+          <div class="a-row">
+            <div class="title">Android Launcher - Home Sample</div>
+            <div class="tech-stack">[Android]</div>
+          </div>
+        </a>
+
         <div class="navigation-list-year">2013</div>
-        <div class="a-row">
-          <div class="title"><a href="files/Unity Bowl/Unity Bowl.html" target="content-target">Simple Bowling</a></div>
-          <div class="tech-stack">[Unity/JS/Android]</div>
-        </div>
-        <div class="a-row">
-          <div class="title failure"><a href="files/svbtle.html" target="content-target">Svbtle Kudo Button Copycat</a></div>
-          <div class="tech-stack">[HTML/CSS/JS]</div>
-        </div>
-        <div class="a-row">
-          <div class="title"><a href="http://cdpn.io/qsbIa" target="content-target">Social Widget Bar</a></div>
-          <div class="tech-stack">[HTML/CSS/JS]</div>
-        </div>
-        <div class="a-row">
-          <div class="title"><a href="http://nusmodcrasher.appspot.com/" target="content-target">NUS ModCrasher</a></div>
-          <div class="tech-stack">[GAE]</div>
-        </div>
-        <div class="a-row">
-          <div class="title failure"><a href="http://hansnewbie.github.io/DropdownMenu/" target="content-target">Dropdown Menu</a></div>
-          <div class="tech-stack">[HTML/CSS pure]</div>
-        </div>
-        <div class="a-row">
-          <div class="title"><a href="http://hansnewbie.github.io/MyFirstApp/" target="content-target">Feel Good</a></div>
-          <div class="tech-stack">[Android]</div>
-        </div>
-        <div class="a-row">
-          <div class="title"><a href="http://hansnewbie.github.io/Tetris-in-Java/" target="content-target">Tetris</a></div>
-          <div class="tech-stack">[Java]</div>
-        </div>
-        <div class="a-row">
-          <div class="title"><a href="http://hansnewbie.github.io/GGJ2013-Deborah" target="content-target">Hallucination of A Night with A Beer Bottle (Game)</a></div>
-          <div class="tech-stack">[HTML/JavaScript]</div>
-        </div>
+
+        <a href="files/Unity Bowl/Unity Bowl.html" target="content-target">
+          <div class="a-row">
+            <div class="title">Simple Bowling</div>
+            <div class="tech-stack">[Unity/JS/Android]</div>
+          </div>
+        </a>
+
+        <a href="files/svbtle.html" target="content-target">
+          <div class="a-row">
+            <div class="title failure">Svbtle Kudo Button Copycat</div>
+            <div class="tech-stack">[HTML/CSS/JS]</div>
+          </div>
+        </a>
+
+        <a href="http://cdpn.io/qsbIa" target="content-target">
+          <div class="a-row">
+            <div class="title">Social Widget Bar</div>
+            <div class="tech-stack">[HTML/CSS/JS]</div>
+          </div>
+        </a>
+
+        <a href="http://nusmodcrasher.appspot.com/" target="content-target">
+          <div class="a-row">
+            <div class="title">NUS ModCrasher</div>
+            <div class="tech-stack">[GAE]</div>
+          </div>
+        </a>
+
+        <a href="http://hansnewbie.github.io/DropdownMenu/" target="content-target">
+          <div class="a-row">
+            <div class="title failure">Dropdown Menu</div>
+            <div class="tech-stack">[HTML/CSS pure]</div>
+          </div>
+        </a>
+
+        <a href="http://hansnewbie.github.io/MyFirstApp/" target="content-target">
+          <div class="a-row">
+            <div class="title">Feel Good</div>
+            <div class="tech-stack">[Android]</div>
+          </div>
+        </a>
+
+        <a href="http://hansnewbie.github.io/Tetris-in-Java/" target="content-target">
+          <div class="a-row">
+            <div class="title">Tetris</div>
+            <div class="tech-stack">[Java]</div>
+          </div>
+        </a>
+
+        <a href="http://hansnewbie.github.io/GGJ2013-Deborah" target="content-target">
+          <div class="a-row">
+            <div class="title">Hallucination of A Night with A Beer Bottle (Game)</div>
+            <div class="tech-stack">[HTML/JavaScript]</div>
+          </div>
+        </a>
+
       </div>
     </div>
   </div>

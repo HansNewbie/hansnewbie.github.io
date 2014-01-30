@@ -1,5 +1,5 @@
 function delayShow() {
-  var runOnce = setTimeout(showAlert, 1000);
+  var runOnce = setTimeout(showAlert, 1500);
 }
 
 function showAlert() {
@@ -8,7 +8,7 @@ function showAlert() {
   var opacity = 0.0;
 
   function fadeIn() {
-    opacity += 0.03;
+    opacity += 0.15;
 
     alert.style.opacity = opacity;
 
