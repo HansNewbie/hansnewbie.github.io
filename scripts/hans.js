@@ -75,7 +75,27 @@ function setSidebarLength() {
   sidebar.style.height = (height - 131)+"px";
 }
 
+function deleteIframeOnLowResolution() {
+  var width = window.innerWidth;
+
+  console.log(width);
+
+  var targetIframe = document.getElementById("iframe-content-target");
+
+  if (width <= 760) {
+    targetIframe.parentNode.removeChild(targetIframe);
+  }
+  else if (!targetIframe) {
+    document.body.innerHTML = document.body.innerHTML + '<iframe src="Homepage.html" name="content-target" id="iframe-content-target"></iframe>';
+  }
+}
+
 function initialize() {
+  deleteIframeOnLowResolution();
   delayShow();
   setSidebarLength();
+}
+
+window.onresize = function() {
+  initialize();
 }

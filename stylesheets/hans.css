@@ -163,7 +163,7 @@ body {
   line-height: 30px;
 }
 
-#navigation-list-container:hover #navigation-list{
+#navigation-list-container:hover #navigation-list {
   width: 580px;
 }
 
@@ -283,6 +283,30 @@ span.red-color {
 
 /* For Display that is less than the table size */
 @media only screen and (max-width: 760px) {
-}
 
+  #navigation-bar {
+    left: 0;
+    width: 100%;
+  }
+
+  #header {
+    width: 100%;
+  }
+
+  #navigation-list-container #navigation-list {
+    width: 100%;
+  }
+
+  #navigation-list .a-row {
+    overflow-x: auto;
+  }
+
+  #navigation-list-container .title {
+    width: 320px;
+  }
+
+  #navigation-list-container .tech-stack {
+    display: block;
+  }
+}
 /* End of Hans */
