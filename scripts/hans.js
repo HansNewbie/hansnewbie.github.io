@@ -7,8 +7,6 @@ function showAlert() {
 
   var opacity = 0.0;
 
-  console.log("I was called!");
-
   function fadeIn() {
     opacity += 0.15;
 
@@ -121,20 +119,18 @@ window.onresize = function() {
 
   var width = window.innerWidth;
 
-  if (width > 760) {
-    var alert = document.getElementById("hide-navigation-instruction");
-    alert.style.opacity = 1.0;
+  var alert = document.getElementById("hide-navigation-instruction");
 
+  if (width > 760) {
     if ( alert.className.match(/(?:^|\s)hidden(?!\S)/) ) {
       alert.className = alert.className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
     }
+
+    alert.style.opacity = 1.0;
   }
   else {
-    var alert = document.getElementById("hide-navigation-instruction");
-    alert.style.opacity = 1.0;
+    alert.style.opacity = 0.0;
 
-    if ( alert.className.match(/(?:^|\s)hidden(?!\S)/) ) {
-      alert.className = alert.className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
-    }
+    alert.className += " hidden";
   }
 }
