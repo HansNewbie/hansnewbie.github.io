@@ -267,6 +267,7 @@ span.red-color {
   font-size: 16px;
   font-weight: 500;
   opacity: 0;
+  box-shadow: 0px 5px 10px #333;
 }
 
 .alert-close {
@@ -289,19 +290,15 @@ span.red-color {
     width: 100%;
   }
 
-  #header {
+  #header, #navigation-list-container {
     width: 100%;
   }
 
-  #navigation-list-container #navigation-list {
-    width: 100%;
+  #navigation-list {
+    width: 580px;
   }
 
-  #navigation-list .a-row {
-    overflow-x: auto;
-  }
-
-  #navigation-list-container .title {
+  #navigation-list-container .title, #navigation-list-container:hover .title {
     width: 320px;
   }
 

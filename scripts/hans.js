@@ -1,4 +1,4 @@
-function delayShow() {
+function giveNavigationInstruction() {
   var runOnce = setTimeout(showAlert, 1500);
 }
 
@@ -6,6 +6,8 @@ function showAlert() {
   var alert = document.getElementById("hide-navigation-instruction");
 
   var opacity = 0.0;
+
+  console.log("I was called!");
 
   function fadeIn() {
     opacity += 0.15;
@@ -48,7 +50,7 @@ function hideOnClick() {
   }
 }
 
-function hideOnHover() {
+function hideAlertOnOtherOccasion() {
   var hidden = document.getElementById("hide-navigation-instruction");
 
   var opacity = 1.0
@@ -67,6 +69,8 @@ function hideOnHover() {
   var id = setInterval(fadeOut, 5);
 }
 
+/* This is to force the sidebar to have 100% height
+ */
 function setSidebarLength() {
   var sidebar = document.getElementById("navigation-list-container");
 
@@ -75,14 +79,17 @@ function setSidebarLength() {
   sidebar.style.height = (height - 131)+"px";
 }
 
-function deleteIframeOnLowResolution() {
+/* This function uses the trick on browser (tested on Chrome) that if
+ * a href target iframe does not exist, the link will open in a new
+ * tab. Thus, we will delete iframe on low resolution or add it back
+ * on high resolution if it was deleted.
+ */
+function controlIframeOnDifferentResolution() {
   var width = window.innerWidth;
-
-  console.log(width);
 
   var targetIframe = document.getElementById("iframe-content-target");
 
-  if (width <= 760) {
+  if (width <= 760 && targetIframe) {
     targetIframe.parentNode.removeChild(targetIframe);
   }
   else if (!targetIframe) {
@@ -90,12 +97,44 @@ function deleteIframeOnLowResolution() {
   }
 }
 
+/* To be called on body onload
+ */
 function initialize() {
-  deleteIframeOnLowResolution();
-  delayShow();
+  controlIframeOnDifferentResolution();
   setSidebarLength();
+
+  var width = window.innerWidth;
+
+  if (width > 760) {
+    giveNavigationInstruction();
+  }
 }
 
+/* On Resizing browser window, navigation instruction will not be animated since it poses a problem with the timing delay.
+ * Alternative:
+ * - To have animation, use global variable to control the animation
+ *   Risk: A lot of reworking on the code
+ */
 window.onresize = function() {
-  initialize();
+  controlIframeOnDifferentResolution();
+  setSidebarLength();
+
+  var width = window.innerWidth;
+
+  if (width > 760) {
+    var alert = document.getElementById("hide-navigation-instruction");
+    alert.style.opacity = 1.0;
+
+    if ( alert.className.match(/(?:^|\s)hidden(?!\S)/) ) {
+      alert.className = alert.className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
+    }
+  }
+  else {
+    var alert = document.getElementById("hide-navigation-instruction");
+    alert.style.opacity = 1.0;
+
+    if ( alert.className.match(/(?:^|\s)hidden(?!\S)/) ) {
+      alert.className = alert.className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
+    }
+  }
 }
