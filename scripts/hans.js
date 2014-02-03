@@ -74,7 +74,7 @@ function setSidebarLength() {
 
   var height = window.innerHeight;
 
-  sidebar.style.height = (height - 131)+"px";
+  sidebar.style.height = (height - 131) + "px";
 }
 
 /* This function uses the trick on browser (tested on Chrome) that if
@@ -84,14 +84,21 @@ function setSidebarLength() {
  */
 function controlIframeOnDifferentResolution() {
   var width = window.innerWidth;
+  var height = window.innerHeight;
 
   var targetIframe = document.getElementById("iframe-content-target");
 
   if (width <= 760 && targetIframe) {
     targetIframe.parentNode.removeChild(targetIframe);
   }
-  else if (!targetIframe) {
-    document.body.innerHTML = document.body.innerHTML + '<iframe src="Homepage.html" name="content-target" id="iframe-content-target"></iframe>';
+  else {
+    if (!targetIframe) {
+      document.body.innerHTML = document.body.innerHTML + '<iframe src="Homepage.html" name="content-target" id="iframe-content-target"></iframe>';
+    }
+
+    targetIframe = document.getElementById("iframe-content-target");
+    targetIframe.style.height = height + "px";
+    targetIframe.style.width = width + "px";
   }
 }
 
