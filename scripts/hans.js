@@ -31,7 +31,7 @@ function hideOnClick() {
   if (element.id) {
     var hidden = document.getElementById("hide-"+element.id);
 
-    var opacity = 1.0
+    var opacity = 1.0;
 
     function fadeOut() {
       opacity -= 0.05;
@@ -51,7 +51,7 @@ function hideOnClick() {
 function hideAlertOnOtherOccasion() {
   var hidden = document.getElementById("hide-navigation-instruction");
 
-  var opacity = 1.0
+  var opacity = 1.0;
 
   function fadeOut() {
     opacity -= 0.05;
@@ -128,16 +128,13 @@ window.onresize = function() {
 
   var alert = document.getElementById("hide-navigation-instruction");
 
-  if (width > 760) {
-    if ( alert.className.match(/(?:^|\s)hidden(?!\S)/) ) {
-      alert.className = alert.className.replace( /(?:^|\s)hidden(?!\S)/g , '' );
-    }
-
-    alert.style.opacity = 1.0;
-  }
-  else {
+  if (width <= 760) {
     alert.style.opacity = 0.0;
 
     alert.className += " hidden";
   }
+  else if ( !alert.className.match(/(?:^|\s)hidden(?!\S)/) ) {
+    giveNavigationInstruction();
+  }
+
 }
