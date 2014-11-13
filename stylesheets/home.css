@@ -48,19 +48,42 @@ table {
 }
 /* End of Reset */
 
-body {
-	font-family: Arial, Helvetica, sans-serif;
+html {
+	min-height: 100%;
 }
 
-#main-container {
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+}
+
+#container-intro {
 	position: absolute;
 	top: 0;
 	left: 0;
 	margin: 0;
 	width: 100%;
-	min-height: 100%;
+	height: 100%;
 	background: #1C87C8;
 	background-size: cover;
+}
+
+@keyframes guide-bounce {
+0%		{left: 100px;}
+50%		{left: 120px;}
+100%	{left: 100px;}
+}
+
+@-webkit-keyframes guide-bounce {
+0%		{left: 100px;}
+50%		{left: 120px;}
+100%	{left: 100px;}
+}
+
+@-moz-keyframes guide-bounce {
+0%		{left: 100px;}
+50%		{left: 120px;}
+100%	{left: 100px;}
 }
 
 #guide {
@@ -70,20 +93,25 @@ body {
 	font-size: 100px;
 	color: #FFF;
 	text-shadow: 0px 5px 10px #333;
-	animation: bounce-hor 1s infinite;
-	-webkit-animation: bounce-hor 1s infinite; /* Safari and Chrome */
+	z-index: 10;
+	animation: guide-bounce 1s infinite;
+	-webkit-animation: guide-bounce 1s infinite; /* Safari and Chrome */
+	-moz-animation: guide-bounce 1s infinite; /* Mozilla */
 }
 
-@keyframes bounce-hor {
-0%		{left: 100px;}
-50%		{left: 120px;}
-100%	{left: 100px;}
+@keyframes show-message {
+from	{opacity: 0;}
+to		{opacity: 1;}
 }
 
-@-webkit-keyframes bounce-hor {
-0%		{left: 100px;}
-50%		{left: 120px;}
-100%	{left: 100px;}
+@-webkit-keyframes show-message {
+from	{opacity: 0;}
+to		{opacity: 1;}
+}
+
+@-moz-keyframes show-message {
+from	{opacity: 0;}
+to		{opacity: 1;}
 }
 
 #welcome-message {
@@ -96,14 +124,5 @@ body {
 	text-shadow: 0px 2px 5px #333;
 	animation: show-message 2s;
 	-webkit-animation: show-message 2s; /* Safari and Chrome */
-}
-
-@keyframes show-message {
-from	{opacity: 0;}
-to		{opacity: 1;}
-}
-
-@-webkit-keyframes show-message {
-from	{opacity: 0;}
-to		{opacity: 1;}
+	-moz-animation: show-message 2s; /* Mozilla */
 }
