@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheets/timeline.css" media="screen" />
+	<title>Timeline</title>
+</head>
+<body>
+	<h2>My Life Story!</h2>
+
+    <div id="container-timeline"></div>
+    
+    <footer>Using template from <a href="http://codepen.io/P233/pen/lGewF" target="_blank">http://codepen.io/P233/pen/lGewF</a> by <a href="http://codepen.io/P233/" target="_blank">Peiwen Lu</a></footer>
+
+<script>
+	var xmlhttp = new XMLHttpRequest();
+	var url = "files/timeline.json";
+
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			var data = JSON.parse(xmlhttp.responseText);
+			//console.log(data);
+            
+            content = createHtmlContent(data);
+            // console.log(document.getElementById("container-timeline").innerHtml);
+            document.getElementById("container-timeline").innerHTML = content;
+            // console.log(document.getElementById("container-timeline").innerHtml);
+		}
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+    
+    createHtmlContent = function(data) {
+        // console.log(data);
+        var target = "";
+        target += '<ul id="timeline">';
+
+        var count = 0;
+
+         for (var i = 0; i < data.length; i++) {
+             for (var j = 0; j < data[i].events.length; j++) {
+                 target += "<li class='work'>";
+                 if (j == 0)
+                     target += "<span class='year'>" + data[i].year + "</span>";
+                 target += "<input class='radio' id='work" + count + "' name='works' type='radio'>";
+                 target += '<div class="relative">';
+                 target += "<label for='work" + count + "'>" + data[i].events[j].title + "</label>";
+                 target += "<span class='circle'></span>";
+                 target += "</div>";
+                 target += "<div class='content'><p>";
+                 if (data[i].events[j].date)
+                     target += "<span class='date'>" + data[i].events[j].date + "</span><br/>";
+                 if (data[i].events[j].more)
+                    target += data[i].events[j].more;
+                 target += "</p></div>"
+                 target += "</li>";
+                 
+                 count++;
+             }
+         }
+
+         target += '</ul>';
+        
+        return target;
+    }
+	</script>
+</body>
+</html>
